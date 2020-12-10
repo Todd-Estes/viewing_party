@@ -7,8 +7,8 @@ class PartiesController < ApplicationController
 
   def create
     user = User.find(current_user.id)
-    day = params[:day].values.join("/")
-    start_time = params[:start_time].values.join(":")
+    day = params[:day].values.join('/')
+    start_time = params[:start_time].values.join(':')
 
     @party = Party.create!(
       movie_title: params[:movie_title],

@@ -1,14 +1,13 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def login
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to "/dashboard"
+      redirect_to '/dashboard'
     else
-      flash[:error] = "Incorrect login information"
+      flash[:error] = 'Incorrect login information'
       redirect_to root_path
     end
   end

@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   def index
-
-    suffix = "/3/movie/top_rated?"
+    suffix = '/3/movie/top_rated?'
     @movie_results = []
     page = 1
 
@@ -15,7 +14,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    id = params["id"].to_i
+    id = params['id'].to_i
 
     @cast = SearchFacade.credits(id)
     @details = SearchFacade.details(id)
@@ -26,9 +25,10 @@ class MoviesController < ApplicationController
   end
 
   private
- def conn
-   Faraday.new("https://api.themoviedb.org") do |f|
-     f.params[:api_key] = ENV["MOVIE_SEARCH_API_KEY"]
-   end
- end
+
+  def conn
+    Faraday.new('https://api.themoviedb.org') do |f|
+      f.params[:api_key] = ENV['MOVIE_SEARCH_API_KEY']
+    end
+  end
 end

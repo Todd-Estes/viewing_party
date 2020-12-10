@@ -15,12 +15,12 @@ class SearchFacade
 
   def self.details(id)
     @details = SearchService.find_details(id)
-      Detail.new(@details)
+    Detail.new(@details)
   end
 
   def self.reviews(id)
     @reviews = SearchService.find_reviews(id)
-      Review.new(@reviews)
+    Review.new(@reviews)
   end
 
   def self.similar_movies(id)
@@ -31,9 +31,9 @@ class SearchFacade
   end
 
   def self.upcoming_movies
-    movies = SearchService.get_upcoming
+    movies = SearchService.find_upcoming
     @upcoming_movies = movies[:results].map do |upcoming|
       Upcoming.new(upcoming)
-    end 
+    end
   end
 end
