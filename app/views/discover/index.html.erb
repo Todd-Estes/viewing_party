@@ -12,9 +12,9 @@
 <div class="upcoming">
   <h3> Upcoming Releases:</h3>
   <ul>
-  <h4> <% @upcoming_movies.each do |upcoming_movie| %> </h4>
-    <li><%= upcoming_movie.title %></li>
-    <%= upcoming_movie.release_date %>
+   <% @upcoming_movies.each do |upcoming_movie| %>
+    <h4><li><%= upcoming_movie.title %></li></h4>
+    <p>Release Date: <%= upcoming_movie.release_date %></p>
   <% end %>
 </ul>
 </div>

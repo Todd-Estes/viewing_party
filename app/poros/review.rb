@@ -7,7 +7,7 @@ class Review
   end
 
   def author
-    if @results[0][:author].nil?
+    if @results.empty? || @results[0][:author].nil?
       'Unknown'
     else
       @results[0][:author]
@@ -15,7 +15,7 @@ class Review
   end
 
   def content
-    if @results[0][:content].nil?
+    if @results.empty? || @results[0][:content].nil?
       'Unknown'
     else
       @results[0][:content]

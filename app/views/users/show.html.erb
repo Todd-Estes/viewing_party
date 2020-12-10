@@ -19,11 +19,14 @@
 </section>
 
   <h3>Viewing Parties:</h3>
+  <ul>
   <% @user.all_parties.each do |party|  %>
     <section id="party-<%= party.id %>">
-      <%= party.movie_title %><br>
+      <h4><%= party.movie_title %></h4>
       <p>Date: <%= party.convert_date %></p>
       <p>Start time: <%= party.convert_time %></p>
       <p>Status: <%= party.user_id == current_user.id ? "Hosting":"Invited" %></p>
+      <br>
     </section>
   <% end %>
+</ul>
